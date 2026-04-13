@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A & B — Getting Married</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f9f4ee;
+      --warm-white: #fdfaf6;
+      --ink: #1c1917;
+      --muted: #7c6f63;
+      --gold: #b89a6a;
+      --gold-light: #d4b896;
+      --rule: rgba(184, 154, 106, 0.35);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    /* Decorative corner flourishes */
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-color: var(--rule);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .hero::before {
+      top: 2.5rem;
+      left: 2.5rem;
+      border-width: 1px 0 0 1px;
+    }
+    .hero::after {
+      bottom: 2.5rem;
+      right: 2.5rem;
+      border-width: 0 1px 1px 0;
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    .ampersand-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .names .amp {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.85em;
+      display: inline-block;
+      margin: 0 0.15em;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 2rem auto;
+      max-width: 320px;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .date-location {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      color: var(--muted);
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+    }
+
+    .date-location strong {
+      font-style: normal;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .coming-soon {
+      margin-top: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+    }
+
+    .coming-soon p {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--rule);
+      padding: 0.75rem 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: transparent;
+      cursor: default;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    /* ── Scroll hint ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.4s forwards;
+    }
+
+    .scroll-hint span {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out 1.8s infinite;
+    }
+
+    /* ── Footer strip ── */
+    .footer-strip {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-strip p {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.15); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .hero::before, .hero::after {
+        width: 80px;
+        height: 80px;
+        top: 1.5rem;
+        left: 1.5rem;
+      }
+      .hero::after {
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <p class="eyebrow">We're getting married</p>
+
+      <div class="names">
+        <span class="first-name">Firstname</span>
+        <span class="amp">&amp;</span>
+        <span class="second-name">Firstname</span>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="date-location">
+        <strong>Date to be confirmed</strong><br />
+        Venue, City
+      </div>
+
+      <div class="coming-soon">
+        <p>Full details coming soon</p>
+        <div class="pill">Save the date</div>
+      </div>
+
+    </div>
+
+    <div class="scroll-hint">
+      <span>More soon</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <footer class="footer-strip">
+    <p>monopoligiddings.wedding</p>
+  </footer>
+
+</body>
+</html>
