@@ -7,6 +7,104 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-intro {
+      max-width: 580px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+    }
+
+    .gallery-intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .gallery-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .gallery-action {
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 2.25rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+
+    .gallery-action:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .gallery-action .action-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-action h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-action p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+    }
+
+    .action-btn {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--rule);
+      padding: 0.6rem 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .action-btn:hover {
+      border-color: var(--gold);
+    }
+
+    .upload-note {
+      max-width: 580px;
+      margin: 0 auto;
+      border-left: 1px solid var(--rule);
+      padding: 0 0 0 1.5rem;
+    }
+
+    .upload-note h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .upload-note p {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      margin: 0;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
   <nav><div class="nav-inner">
@@ -22,7 +120,7 @@
       <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
     <div style="display:flex;align-items:center;">
-      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 🇮🇹</button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div></nav>
@@ -33,17 +131,69 @@
     <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
     <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
     <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
-    <li><a href="gallery.html" class="active" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+    <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
     <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
   </ul></div>
+
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
       <h1 class="page-title" data-en="Gallery" data-it="Galleria">Gallery</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;" data-en="Memories in the making." data-it="Ricordi in divenire.">Memories in the making.</p>
+      <p style="max-width:480px;margin:0.5rem auto 0;"
+         data-en="Our photos — and yours too. We'd love to see the day through your eyes."
+         data-it="Le nostre foto — e anche le vostre. Ci piacerebbe vedere la giornata attraverso i vostri occhi.">
+        Our photos — and yours too. We'd love to see the day through your eyes.
+      </p>
     </div>
-  <div class="container-wide fade-in"><div class="placeholder-box"><p data-en="Photos coming soon" data-it="Foto in arrivo">Photos coming soon</p></div></div>
+
+    <div class="container fade-in">
+
+      <div class="gallery-intro">
+        <p data-en="Before, during and after the big day — all our memories in one place. Browse the album below, and if you've taken any photos yourself, please do add them. The more the merrier."
+           data-it="Prima, durante e dopo il grande giorno — tutti i nostri ricordi in un unico posto. Sfogliate l'album qui sotto e, se avete scattato delle foto, aggiungetele pure. Più siamo, meglio è.">
+          Before, during and after the big day — all our memories in one place. Browse the album below, and if you've taken any photos yourself, please do add them. The more the merrier.
+        </p>
+      </div>
+
+      <div class="gallery-actions">
+        <a href="https://photos.app.goo.gl/aKzz3aCQ3iRneZuF9" target="_blank" rel="noopener" class="gallery-action">
+          <span class="action-icon">📷</span>
+          <h3 data-en="View the Album" data-it="Sfoglia l'Album">View the Album</h3>
+          <p data-en="Browse all our photos from the wedding and the celebrations around it."
+             data-it="Sfoglia tutte le nostre foto dal matrimonio e dai festeggiamenti.">
+            Browse all our photos from the wedding and the celebrations around it.
+          </p>
+          <span class="action-btn" data-en="Open album →" data-it="Apri l'album →">Open album →</span>
+        </a>
+
+        <a href="https://photos.app.goo.gl/aKzz3aCQ3iRneZuF9" target="_blank" rel="noopener" class="gallery-action">
+          <span class="action-icon">🤳</span>
+          <h3 data-en="Add Your Photos" data-it="Aggiungi le Tue Foto">Add Your Photos</h3>
+          <p data-en="Got photos from the day? Add them to the shared album — you'll just need a Google account to upload."
+             data-it="Hai foto della giornata? Aggiungile all'album condiviso — ti basterà un account Google per caricarle.">
+            Got photos from the day? Add them to the shared album — you'll just need a Google account to upload.
+          </p>
+          <span class="action-btn" data-en="Add photos →" data-it="Aggiungi foto →">Add photos →</span>
+        </a>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="upload-note">
+        <h3 data-en="A note on uploading" data-it="Una nota sul caricamento">A note on uploading</h3>
+        <p data-en="To add photos you'll need to be signed in to a Google account. If you don't have one, creating one is free and takes only a minute. Once signed in, simply open the album and click the add photos button. Your contributions are hugely appreciated — we want to see everything."
+           data-it="Per aggiungere foto dovrai essere connesso a un account Google. Se non ne hai uno, crearlo è gratuito e richiede solo un minuto. Una volta effettuato l'accesso, apri semplicemente l'album e clicca sul pulsante per aggiungere foto. I vostri contributi sono molto apprezzati — vogliamo vedere tutto.">
+          To add photos you'll need to be signed in to a Google account. If you don't have one, creating one is free and takes only a minute. Once signed in, simply open the album and click the add photos button. Your contributions are hugely appreciated — we want to see everything.
+        </p>
+      </div>
+
+    </div>
   </div>
+
   <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>

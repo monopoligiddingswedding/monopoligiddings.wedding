@@ -7,6 +7,98 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .dress-hero {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 4rem;
+    }
+
+    .dress-hero .big-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .dress-hero .big-label em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .dress-hero p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .dress-rules {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .dress-rule {
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .dress-rule .rule-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .dress-rule h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .dress-rule p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .hat-notice {
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 2rem 2.5rem;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .hat-notice .hat-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .hat-notice h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .hat-notice p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <nav><div class="nav-inner">
@@ -22,7 +114,7 @@
       <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
     <div style="display:flex;align-items:center;">
-      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 🇮🇹</button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div></nav>
@@ -31,19 +123,80 @@
     <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
     <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
     <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
-    <li><a href="dress-code.html" class="active" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+    <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
     <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
     <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
     <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
   </ul></div>
+
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
       <h1 class="page-title" data-en="Dress Code" data-it="Dress Code">Dress Code</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;" data-en="How to dress for the occasion." data-it="Come vestirsi per l'occasione.">How to dress for the occasion.</p>
+      <p style="max-width:480px;margin:0.5rem auto 0;"
+         data-en="We want you to look and feel fabulous. Here's what we have in mind."
+         data-it="Vogliamo che siate splendidi. Ecco cosa abbiamo in mente.">
+        We want you to look and feel fabulous. Here's what we have in mind.
+      </p>
     </div>
-  <div class="container fade-in"><div class="placeholder-box"><p data-en="Dress code details coming soon" data-it="Dettagli sul dress code in arrivo">Dress code details coming soon</p></div></div>
+
+    <div class="container fade-in">
+
+      <div class="dress-hero">
+        <div class="big-label">
+          <span data-en="Suited <em>&amp;</em> Booted" data-it="Eleganti <em>&amp;</em> Impeccabili">Suited <em>&amp;</em> Booted</span>
+        </div>
+        <p data-en="We're celebrating in style in the Pugliese sunshine — smart formal dress is the order of the day. Think suits, ties, elegant dresses and heels. This is a big occasion and we'd love everyone to dress the part."
+           data-it="Festeggiamo in grande stile sotto il sole pugliese — l'abito formale elegante è d'obbligo. Pensate a completi, cravatte, abiti eleganti e tacchi. È un'occasione speciale e vorremmo che tutti fossero all'altezza.">
+          We're celebrating in style in the Pugliese sunshine — smart formal dress is the order of the day. Think suits, ties, elegant dresses and heels. This is a big occasion and we'd love everyone to dress the part.
+        </p>
+      </div>
+
+      <div class="dress-rules">
+        <div class="dress-rule">
+          <span class="rule-icon">👔</span>
+          <h3 data-en="For the Gentlemen" data-it="Per i Signori">For the Gentlemen</h3>
+          <p data-en="Suits and ties please. A classic look — smart, sharp and celebration-ready. Pocket squares encouraged."
+             data-it="Abito e cravatta, per favore. Un look classico — elegante, curato e pronto a festeggiare. Fazzoletti da taschino incoraggiati.">
+            Suits and ties please. A classic look — smart, sharp and celebration-ready. Pocket squares encouraged.
+          </p>
+        </div>
+        <div class="dress-rule">
+          <span class="rule-icon">👗</span>
+          <h3 data-en="For the Ladies" data-it="Per le Signore">For the Ladies</h3>
+          <p data-en="Elegant dresses or formal suits. Heels, wedges or smart flats — bear in mind we'll be on a Masseria, so stilettos on cobblestones are at your own risk!"
+             data-it="Abiti eleganti o completi formali. Tacchi, zeppe o scarpe basse eleganti — tenete presente che saremo in una masseria, quindi i tacchi a spillo sui sanpietrini sono a vostro rischio!">
+            Elegant dresses or formal suits. Heels, wedges or smart flats — bear in mind we'll be on a Masseria, so stilettos on cobblestones are at your own risk!
+          </p>
+        </div>
+        <div class="dress-rule">
+          <span class="rule-icon">🌡️</span>
+          <h3 data-en="Bear in Mind" data-it="Tenetelo a Mente">Bear in Mind</h3>
+          <p data-en="Puglia in summer is gloriously hot. Light fabrics are your friends — linen suits, breathable materials and layers you can remove as the evening warms up."
+             data-it="La Puglia in estate è meravigliosamente calda. I tessuti leggeri sono i vostri alleati — completi di lino, materiali traspiranti e strati che potrete togliere man mano che la serata si scalda.">
+            Puglia in summer is gloriously hot. Light fabrics are your friends — linen suits, breathable materials and layers you can remove as the evening warms up.
+          </p>
+        </div>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="hat-notice">
+        <span class="hat-icon">🎩</span>
+        <h3 data-en="Big Silly Hats: Strongly Encouraged" data-it="Cappelli Assurdi: Fortemente Incoraggiati">Big Silly Hats: Strongly Encouraged</h3>
+        <p data-en="This is not a drill. If you own a wonderfully oversized, outrageous or frankly inexplicable hat, this is your moment. Extra points for creativity. The bigger, the better."
+           data-it="Non è uno scherzo. Se possedete un cappello meravigliosamente enorme, stravagante o francamente inspiegabile, questo è il vostro momento. Punti extra per la creatività. Più grande è, meglio è.">
+          This is not a drill. If you own a wonderfully oversized, outrageous or frankly inexplicable hat, this is your moment. Extra points for creativity. The bigger, the better.
+        </p>
+      </div>
+
+    </div>
   </div>
+
   <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>
