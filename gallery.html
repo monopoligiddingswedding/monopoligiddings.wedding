@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Elisabetta &amp; Luke</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,51 +9,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="details.html">Details</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-        <li><a href="accommodation.html">Stay</a></li>
-        <li><a href="dress-code.html">Dress Code</a></li>
-        <li><a href="registry.html">Registry</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="nav-menu" id="nav-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="details.html">Details</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
-      <li><a href="accommodation.html">Stay</a></li>
-      <li><a href="dress-code.html">Dress Code</a></li>
-      <li><a href="registry.html">Registry</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+  <nav><div class="nav-inner">
+    <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+      <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+      <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+      <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+      <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+      <li><a href="gallery.html" class="active" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+      <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
-  </div>
+    <div style="display:flex;align-items:center;">
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div></nav>
+  <div class="nav-menu" id="nav-menu"><ul>
+    <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+    <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+    <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+    <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+    <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+    <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+    <li><a href="gallery.html" class="active" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+    <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+  </ul></div>
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
-      <h1 class="page-title">Gallery</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;">Memories in the making.</p>
+      <h1 class="page-title" data-en="Gallery" data-it="Galleria">Gallery</h1>
+      <p style="max-width:480px;margin:0.5rem auto 0;" data-en="Memories in the making." data-it="Ricordi in divenire.">Memories in the making.</p>
     </div>
-  <div class="container-wide fade-in">
-    <div class="placeholder-box">
-      <p>Photos coming soon</p>
-    </div>
+  <div class="container-wide fade-in"><div class="placeholder-box"><p data-en="Photos coming soon" data-it="Foto in arrivo">Photos coming soon</p></div></div>
   </div>
-  </div>
-  <footer>
-    <p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p>
-  </footer>
+  <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>
 </html>

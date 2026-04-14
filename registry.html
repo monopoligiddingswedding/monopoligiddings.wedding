@@ -1,60 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gift Registry — Elisabetta &amp; Luke</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .registry-intro {
+      max-width: 620px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+    }
+
+    .registry-intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .fund-box {
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 2.5rem;
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .fund-box .fund-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .fund-box p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .fund-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .fund-box .fund-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .fund-note-line {
+      width: 30px;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .suggestions-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .suggestions-sub {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .suggestion-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .suggestion-card {
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 1.75rem;
+    }
+
+    .suggestion-card .s-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .suggestion-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .suggestion-card p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="details.html">Details</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-        <li><a href="accommodation.html">Stay</a></li>
-        <li><a href="dress-code.html">Dress Code</a></li>
-        <li><a href="registry.html">Registry</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="nav-menu" id="nav-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="details.html">Details</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
-      <li><a href="accommodation.html">Stay</a></li>
-      <li><a href="dress-code.html">Dress Code</a></li>
-      <li><a href="registry.html">Registry</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+  <nav><div class="nav-inner">
+    <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+      <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+      <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+      <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+      <li><a href="registry.html" class="active" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+      <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
-  </div>
+    <div style="display:flex;align-items:center;">
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 🇮🇹</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div></nav>
+  <div class="nav-menu" id="nav-menu"><ul>
+    <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+    <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+    <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+    <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+    <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+    <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+    <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+    <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+  </ul></div>
+
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
-      <h1 class="page-title">Gift Registry</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;">Your presence is the greatest gift of all.</p>
+      <h1 class="page-title" data-en="Gift Registry" data-it="Lista Nozze">Gift Registry</h1>
+      <p style="max-width:480px;margin:0.5rem auto 0;"
+         data-en="Your presence at our wedding is the greatest gift of all."
+         data-it="La vostra presenza al nostro matrimonio è il regalo più grande di tutti.">
+        Your presence at our wedding is the greatest gift of all.
+      </p>
     </div>
-  <div class="container fade-in">
-    <div class="placeholder-box">
-      <p>Registry details coming soon</p>
+
+    <div class="container fade-in">
+
+      <!-- Luggage / fund notice -->
+      <div class="fund-box">
+        <div class="fund-title"
+             data-en="The &ldquo;Repatriate Eli to Italy&rdquo; Fund"
+             data-it="Il Fondo &ldquo;Rimpatria Eli in Italia&rdquo;">
+          The &ldquo;Repatriate Eli to Italy&rdquo; Fund
+        </div>
+
+        <p data-en="As we'll be flying home with Ryanair, we regret that luggage space for gifts is — let's say — somewhat limited. Rather than leaving presents behind at security, we'd be delighted if you'd consider a contribution to the &ldquo;Repatriate Eli to Italy&rdquo; fund instead."
+           data-it="Torneremo a casa con Ryanair, il che significa che lo spazio per i bagagli è — diciamo — alquanto limitato. Piuttosto che lasciare regali al controllo di sicurezza, saremmo felicissimi se voleste contribuire al fondo &ldquo;Rimpatria Eli in Italia&rdquo;.">
+          As we'll be flying home with Ryanair, we regret that luggage space for gifts is — let's say — somewhat limited. Rather than leaving presents behind at security, we'd be delighted if you'd consider a contribution to the &ldquo;Repatriate Eli to Italy&rdquo; fund instead.
+        </p>
+
+        <p data-en="Bank details can be found on your invitation. If you don't have them to hand, please don't hesitate to get in touch with us directly and we'll pass them along."
+           data-it="Le coordinate bancarie si trovano sul vostro invito. Se non le avete sottomano, non esitate a contattarci direttamente e ve le faremo avere.">
+          Bank details can be found on your invitation. If you don't have them to hand, please don't hesitate to get in touch with us directly and we'll pass them along.
+        </p>
+
+        <div class="fund-note">
+          <div class="fund-note-line"></div>
+          <span data-en="All contributions gratefully received" data-it="Ogni contributo è accolto con gratitudine">All contributions gratefully received</span>
+          <div class="fund-note-line"></div>
+        </div>
+      </div>
+
     </div>
   </div>
-  </div>
-  <footer>
-    <p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p>
-  </footer>
+
+  <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>
 </html>

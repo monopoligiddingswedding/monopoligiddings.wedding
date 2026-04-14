@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding Details — Elisabetta &amp; Luke</title>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Details — Elisabetta &amp; Luke</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="details.html">Details</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-        <li><a href="accommodation.html">Stay</a></li>
-        <li><a href="dress-code.html">Dress Code</a></li>
-        <li><a href="registry.html">Registry</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="nav-menu" id="nav-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="details.html">Details</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
-      <li><a href="accommodation.html">Stay</a></li>
-      <li><a href="dress-code.html">Dress Code</a></li>
-      <li><a href="registry.html">Registry</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+  <nav><div class="nav-inner">
+    <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="details.html" class="active" data-en="Details" data-it="Dettagli">Details</a></li>
+      <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+      <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+      <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+      <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+      <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
-  </div>
+    <div style="display:flex;align-items:center;">
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div></nav>
+  <div class="nav-menu" id="nav-menu"><ul>
+    <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+    <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+    <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+    <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+    <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+    <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+    <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+    <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+  </ul></div>
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
-      <h1 class="page-title">The Details</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;">Everything you need to know about the big day.</p>
+      <h1 class="page-title" data-en="The Details" data-it="I Dettagli">The Details</h1>
+      <p style="max-width:480px;margin:0.5rem auto 0;" data-en="Everything you need to know about the big day." data-it="Tutto quello che devi sapere sul grande giorno.">Everything you need to know about the big day.</p>
     </div>
-  <div class="container fade-in">
-    <div class="cards">
-      <div class="card">
-        <h3>Ceremony</h3>
-        <p>Date, time and location to be confirmed.</p>
-      </div>
-      <div class="card">
-        <h3>Reception</h3>
-        <p>Details to follow.</p>
-      </div>
-      <div class="card">
-        <h3>Venue</h3>
-        <p>A Masseria, Puglia, Italy.</p>
+    <div class="container fade-in">
+      <div class="cards">
+        <div class="card">
+          <h3 data-en="Ceremony" data-it="Cerimonia">Ceremony</h3>
+          <p data-en="Date, time and location to be confirmed." data-it="Data, orario e luogo da confermare.">Date, time and location to be confirmed.</p>
+        </div>
+        <div class="card">
+          <h3 data-en="Reception" data-it="Ricevimento">Reception</h3>
+          <p data-en="Details to follow." data-it="Dettagli in arrivo.">Details to follow.</p>
+        </div>
+        <div class="card">
+          <h3 data-en="Venue" data-it="Location">Venue</h3>
+          <p data-en="A Masseria, Puglia, Italy." data-it="Una Masseria, Puglia, Italia.">A Masseria, Puglia, Italy.</p>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  <footer>
-    <p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p>
-  </footer>
+  <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>
 </html>

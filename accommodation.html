@@ -1,413 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting There &amp; Staying Over — Elisabetta &amp; Luke</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Section headings ── */
-    .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-
-    .section-block {
-      margin-bottom: 4rem;
-    }
-
-    .section-block h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 1.9rem;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-block p {
-      max-width: 620px;
-    }
-
-    /* ── Transport timeline ── */
-    .transport-steps {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .transport-step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 0 1.5rem;
-      position: relative;
-    }
-
-    .step-indicator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .step-dot {
-      width: 10px;
-      height: 10px;
-      border: 1px solid var(--gold);
-      background: var(--cream);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
-
-    .step-line {
-      width: 1px;
-      flex: 1;
-      background: var(--rule);
-      margin: 6px 0;
-      min-height: 2.5rem;
-    }
-
-    .transport-step:last-child .step-line {
-      display: none;
-    }
-
-    .step-content {
-      padding-bottom: 2rem;
-    }
-
-    .step-content h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.15rem;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-
-    .step-content p {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .step-tag {
-      display: inline-block;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--rule);
-      padding: 0.2rem 0.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ── Airport cards ── */
-    .airport-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .airport-card {
-      border: 1px solid var(--rule);
-      background: var(--warm-white);
-      padding: 1.75rem;
-    }
-
-    .airport-card .iata {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .airport-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-
-    .airport-card p {
-      font-size: 0.875rem;
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    /* ── Hotel recommendation cards ── */
-    .hotel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .hotel-card {
-      border: 1px solid var(--rule);
-      background: var(--warm-white);
-      padding: 1.75rem;
-    }
-
-    .hotel-card .hotel-type {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .hotel-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.2rem;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .hotel-card p {
-      font-size: 0.875rem;
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    /* ── On-site notice ── */
-    .onsite-notice {
-      border: 1px solid var(--rule);
-      background: var(--warm-white);
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.5rem;
-      align-items: start;
-      margin-top: 1.5rem;
-    }
-
-    .onsite-notice .notice-diamond {
-      width: 10px;
-      height: 10px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-
-    .onsite-notice h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.15rem;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .onsite-notice p {
-      font-size: 0.9rem;
-      margin: 0;
-      line-height: 1.7;
-    }
+    .section-label { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.6rem; }
+    .section-block { margin-bottom:4rem; }
+    .section-block h2 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.9rem; color:var(--ink); margin-bottom:0.75rem; }
+    .section-block p { max-width:620px; }
+    .transport-steps { margin-top:2rem; display:flex; flex-direction:column; }
+    .transport-step { display:grid; grid-template-columns:48px 1fr; gap:0 1.5rem; }
+    .step-indicator { display:flex; flex-direction:column; align-items:center; }
+    .step-dot { width:10px; height:10px; border:1px solid var(--gold); background:var(--cream); transform:rotate(45deg); flex-shrink:0; margin-top:4px; }
+    .step-line { width:1px; flex:1; background:var(--rule); margin:6px 0; min-height:2.5rem; }
+    .transport-step:last-child .step-line { display:none; }
+    .step-content { padding-bottom:2rem; }
+    .step-content h3 { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.15rem; color:var(--ink); margin-bottom:0.3rem; }
+    .step-content p { font-size:0.9rem; line-height:1.7; margin:0; }
+    .step-tag { display:inline-block; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); border:1px solid var(--rule); padding:0.2rem 0.6rem; margin-bottom:0.5rem; }
+    .airport-cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; margin-top:1.5rem; }
+    .airport-card { border:1px solid var(--rule); background:var(--warm-white); padding:1.75rem; }
+    .airport-card .iata { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--gold); line-height:1; margin-bottom:0.5rem; }
+    .airport-card h3 { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.1rem; color:var(--ink); margin-bottom:0.5rem; }
+    .airport-card p { font-size:0.875rem; margin:0; line-height:1.65; }
+    .hotel-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; margin-top:1.5rem; }
+    .hotel-card { border:1px solid var(--rule); background:var(--warm-white); padding:1.75rem; }
+    .hotel-card .hotel-type { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.5rem; }
+    .hotel-card h3 { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.2rem; color:var(--ink); margin-bottom:0.4rem; }
+    .hotel-card p { font-size:0.875rem; margin:0; line-height:1.65; }
+    .onsite-notice { border:1px solid var(--rule); background:var(--warm-white); padding:2rem; display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:start; margin-top:1.5rem; }
+    .onsite-notice .notice-diamond { width:10px; height:10px; background:var(--gold); transform:rotate(45deg); margin-top:5px; flex-shrink:0; }
+    .onsite-notice h3 { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.15rem; color:var(--ink); margin-bottom:0.4rem; }
+    .onsite-notice p { font-size:0.9rem; margin:0; line-height:1.7; }
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="details.html">Details</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-        <li><a href="accommodation.html" class="active">Stay</a></li>
-        <li><a href="dress-code.html">Dress Code</a></li>
-        <li><a href="registry.html">Registry</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="nav-menu" id="nav-menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="details.html">Details</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
-      <li><a href="accommodation.html" class="active">Stay</a></li>
-      <li><a href="dress-code.html">Dress Code</a></li>
-      <li><a href="registry.html">Registry</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+  <nav><div class="nav-inner">
+    <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+      <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+      <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+      <li><a href="accommodation.html" class="active" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+      <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+      <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+      <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+      <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
-  </div>
+    <div style="display:flex;align-items:center;">
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div></nav>
+  <div class="nav-menu" id="nav-menu"><ul>
+    <li><a href="index.html" data-en="Home" data-it="Home">Home</a></li>
+    <li><a href="details.html" data-en="Details" data-it="Dettagli">Details</a></li>
+    <li><a href="rsvp.html" data-en="RSVP" data-it="RSVP">RSVP</a></li>
+    <li><a href="accommodation.html" data-en="Stay" data-it="Soggiorno">Stay</a></li>
+    <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
+    <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
+    <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
+    <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+  </ul></div>
 
   <div class="page">
-
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
-      <h1 class="page-title">Getting There &amp; Staying Over</h1>
-      <p style="max-width:520px;margin:0.5rem auto 0;">
+      <h1 class="page-title" data-en="Getting There &amp; Staying Over" data-it="Come Arrivare &amp; Dove Soggiornare">Getting There &amp; Staying Over</h1>
+      <p style="max-width:520px;margin:0.5rem auto 0;"
+         data-en="We're getting married in the beautiful region of Puglia in southern Italy. Here's everything you need to plan your trip."
+         data-it="Ci sposiamo nella splendida regione pugliese, nel sud Italia. Ecco tutto quello che vi serve per pianificare il vostro viaggio.">
         We're getting married in the beautiful region of Puglia in southern Italy. Here's everything you need to plan your trip.
       </p>
     </div>
 
     <div class="container fade-in">
 
-      <!-- ── GETTING THERE ── -->
+      <!-- AIRPORTS -->
       <div class="section-block">
-        <span class="section-label">Flying in</span>
-        <h2>Getting to Puglia</h2>
-        <p>
-          There are two airports serving the area. Both are well connected from major UK and European cities,
-          and either will get you to Conversano with ease. We recommend booking flights early as summer
-          availability in Puglia fills up quickly.
+        <span class="section-label" data-en="Flying in" data-it="In aereo">Flying in</span>
+        <h2 data-en="Getting to Puglia" data-it="Come Raggiungere la Puglia">Getting to Puglia</h2>
+        <p data-en="There are two airports serving the area. Both are well connected from major UK and European cities, and either will get you to Conversano with ease. We recommend booking flights early as summer availability in Puglia fills up quickly."
+           data-it="La zona è servita da due aeroporti. Entrambi sono ben collegati dalle principali città del Regno Unito e d'Europa, e da entrambi si raggiunge facilmente Conversano. Vi consigliamo di prenotare i voli in anticipo, poiché i posti in estate si esauriscono rapidamente.">
+          There are two airports serving the area. Both are well connected from major UK and European cities, and either will get you to Conversano with ease. We recommend booking flights early as summer availability in Puglia fills up quickly.
         </p>
-
         <div class="airport-cards">
           <div class="airport-card">
             <div class="iata">BRI</div>
-            <h3>Bari Karol Wojtyła Airport</h3>
-            <p>
-              Approximately 35–40 minutes from Conversano by car.
-              The larger of the two airports with more direct flight options from the UK and across Europe.
+            <h3 data-en="Bari Karol Wojtyła Airport" data-it="Aeroporto di Bari Karol Wojtyła">Bari Karol Wojtyła Airport</h3>
+            <p data-en="Approximately 35–40 minutes from Conversano by car. The larger of the two airports with more direct flight options from the UK and across Europe."
+               data-it="A circa 35–40 minuti da Conversano in auto. È il più grande dei due aeroporti e offre più voli diretti dal Regno Unito e da tutta Europa.">
+              Approximately 35–40 minutes from Conversano by car. The larger of the two airports with more direct flight options from the UK and across Europe.
             </p>
           </div>
           <div class="airport-card">
             <div class="iata">BDS</div>
-            <h3>Brindisi Airport</h3>
-            <p>
-              Approximately 60–70 minutes from Conversano by car.
-              A good alternative, particularly if you find better flight connections or pricing.
+            <h3 data-en="Brindisi Airport" data-it="Aeroporto di Brindisi">Brindisi Airport</h3>
+            <p data-en="Approximately 60–70 minutes from Conversano by car. A good alternative, particularly if you find better flight connections or pricing."
+               data-it="A circa 60–70 minuti da Conversano in auto. Una buona alternativa, soprattutto se trovate collegamenti o prezzi migliori.">
+              Approximately 60–70 minutes from Conversano by car. A good alternative, particularly if you find better flight connections or pricing.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="divider">
-        <div class="divider-line"></div>
-        <div class="divider-diamond"></div>
-        <div class="divider-line"></div>
-      </div>
+      <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
 
-      <!-- ── TRANSPORT ON THE DAY ── -->
+      <!-- TRANSPORT -->
       <div class="section-block">
-        <span class="section-label">On the day</span>
-        <h2>Getting Around</h2>
-        <p>
-          Getting yourself to Conversano is down to you — we recommend hiring a car, which also lets you
-          explore the stunning Pugliese countryside at your own pace. Once the celebrations begin,
-          we've got you covered.
+        <span class="section-label" data-en="On the day" data-it="Il giorno del matrimonio">On the day</span>
+        <h2 data-en="Getting Around" data-it="Come Spostarsi">Getting Around</h2>
+        <p data-en="Getting yourself to Conversano is down to you — we recommend hiring a car, which also lets you explore the stunning Pugliese countryside at your own pace. Once the celebrations begin, we've got you covered."
+           data-it="Il trasferimento fino a Conversano è a vostro carico — vi consigliamo di noleggiare un'auto, così potrete esplorare la bellissima campagna pugliese con calma. Una volta iniziati i festeggiamenti, pensiamo a tutto noi.">
+          Getting yourself to Conversano is down to you — we recommend hiring a car, which also lets you explore the stunning Pugliese countryside at your own pace. Once the celebrations begin, we've got you covered.
         </p>
-
         <div class="transport-steps">
-
           <div class="transport-step">
-            <div class="step-indicator">
-              <div class="step-dot"></div>
-              <div class="step-line"></div>
-            </div>
+            <div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div>
             <div class="step-content">
-              <span class="step-tag">Your own arrangements</span>
-              <h3>Airport → Conversano</h3>
-              <p>Please make your own way to Conversano. We recommend hiring a car — it gives you the
-              freedom to explore Puglia before and after the wedding. Taxis and transfers are also
-              available from both airports.</p>
+              <span class="step-tag" data-en="Your own arrangements" data-it="Autonomamente">Your own arrangements</span>
+              <h3 data-en="Airport → Conversano" data-it="Aeroporto → Conversano">Airport → Conversano</h3>
+              <p data-en="Please make your own way to Conversano. We recommend hiring a car — it gives you the freedom to explore Puglia before and after the wedding. Taxis and transfers are also available from both airports."
+                 data-it="Vi preghiamo di raggiungere Conversano autonomamente. Vi consigliamo di noleggiare un'auto — così avrete la libertà di esplorare la Puglia prima e dopo il matrimonio. Da entrambi gli aeroporti sono disponibili anche taxi e transfer.">
+                Please make your own way to Conversano. We recommend hiring a car — it gives you the freedom to explore Puglia before and after the wedding. Taxis and transfers are also available from both airports.
+              </p>
             </div>
           </div>
-
           <div class="transport-step">
-            <div class="step-indicator">
-              <div class="step-dot"></div>
-              <div class="step-line"></div>
-            </div>
+            <div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div>
             <div class="step-content">
-              <span class="step-tag">Provided by us</span>
-              <h3>Ceremony → Reception</h3>
-              <p>We will be laying on transport to take guests from the ceremony directly to the reception venue.
-              Full details of timings and pick-up points will be shared closer to the day.</p>
+              <span class="step-tag" data-en="Provided by us" data-it="A cura nostra">Provided by us</span>
+              <h3 data-en="Ceremony → Reception" data-it="Cerimonia → Ricevimento">Ceremony → Reception</h3>
+              <p data-en="We will be laying on transport to take guests from the ceremony directly to the reception venue. Full details of timings and pick-up points will be shared closer to the day."
+                 data-it="Organizzeremo un servizio di trasporto per accompagnare gli ospiti direttamente dalla cerimonia al ricevimento. I dettagli sugli orari e i punti di raccolta saranno comunicati in prossimità del giorno.">
+                We will be laying on transport to take guests from the ceremony directly to the reception venue. Full details of timings and pick-up points will be shared closer to the day.
+              </p>
             </div>
           </div>
-
           <div class="transport-step">
-            <div class="step-indicator">
-              <div class="step-dot"></div>
-              <div class="step-line"></div>
-            </div>
+            <div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div>
             <div class="step-content">
-              <span class="step-tag">Provided by us</span>
-              <h3>Reception → Hotels</h3>
-              <p>At the end of the evening, we will be providing transport back to the recommended hotels
-              in the area. No one needs to worry about getting home — just enjoy the night.</p>
+              <span class="step-tag" data-en="Provided by us" data-it="A cura nostra">Provided by us</span>
+              <h3 data-en="Reception → Hotels" data-it="Ricevimento → Hotel">Reception → Hotels</h3>
+              <p data-en="At the end of the evening, we will be providing transport back to the recommended hotels in the area. No one needs to worry about getting home — just enjoy the night."
+                 data-it="A fine serata, organizzeremo il trasporto di ritorno verso gli hotel consigliati nella zona. Nessuno dovrà preoccuparsi di come rientrare — godetevi la serata.">
+                At the end of the evening, we will be providing transport back to the recommended hotels in the area. No one needs to worry about getting home — just enjoy the night.
+              </p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <div class="divider">
-        <div class="divider-line"></div>
-        <div class="divider-diamond"></div>
-        <div class="divider-line"></div>
-      </div>
+      <div class="divider"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
 
-      <!-- ── ACCOMMODATION ── -->
+      <!-- ACCOMMODATION -->
       <div class="section-block">
-        <span class="section-label">Where to stay</span>
-        <h2>Accommodation</h2>
-        <p>
-          We've done the research so you don't have to. Below are our recommended places to stay in and
-          around Conversano. We suggest booking as early as possible — Puglia in summer is deservedly popular.
+        <span class="section-label" data-en="Where to stay" data-it="Dove soggiornare">Where to stay</span>
+        <h2 data-en="Accommodation" data-it="Alloggio">Accommodation</h2>
+        <p data-en="We've done the research so you don't have to. Below are our recommended places to stay in and around Conversano. We suggest booking as early as possible — Puglia in summer is deservedly popular."
+           data-it="Abbiamo fatto le ricerche per voi. Di seguito trovate i nostri alloggi consigliati a Conversano e dintorni. Vi suggeriamo di prenotare il prima possibile — la Puglia in estate è meritamente molto richiesta.">
+          We've done the research so you don't have to. Below are our recommended places to stay in and around Conversano. We suggest booking as early as possible — Puglia in summer is deservedly popular.
         </p>
-
         <div class="onsite-notice">
           <div class="notice-diamond"></div>
           <div>
-            <h3>Staying at the Masseria</h3>
-            <p>
-              A number of rooms at the Masseria itself are reserved for close family and selected guests.
-              If you have been offered on-site accommodation, you will have heard from us directly.
-              Please get in touch if you have any questions about this.
+            <h3 data-en="Staying at the Masseria" data-it="Soggiornare alla Masseria">Staying at the Masseria</h3>
+            <p data-en="A number of rooms at the Masseria itself are reserved for close family and selected guests. If you have been offered on-site accommodation, you will have heard from us directly. Please get in touch if you have any questions about this."
+               data-it="Un certo numero di camere alla Masseria è riservato ai familiari stretti e agli ospiti selezionati. Se vi è stato offerto un alloggio in loco, lo avrete già saputo direttamente da noi. Non esitate a contattarci per qualsiasi domanda.">
+              A number of rooms at the Masseria itself are reserved for close family and selected guests. If you have been offered on-site accommodation, you will have heard from us directly. Please get in touch if you have any questions about this.
             </p>
           </div>
         </div>
-
         <div class="hotel-grid" style="margin-top:2rem;">
           <div class="hotel-card">
-            <span class="hotel-type">B&amp;B · Conversano</span>
+            <span class="hotel-type" data-en="B&amp;B · Conversano" data-it="B&amp;B · Conversano">B&amp;B · Conversano</span>
             <h3>B&amp;B by Stefy Panarelli</h3>
-            <p>Details and booking information to follow. Check back soon.</p>
+            <p data-en="Details and booking information to follow. Check back soon." data-it="Dettagli e informazioni per la prenotazione in arrivo. Torna presto.">Details and booking information to follow. Check back soon.</p>
           </div>
           <div class="hotel-card">
-            <span class="hotel-type">B&amp;B · Conversano</span>
+            <span class="hotel-type" data-en="B&amp;B · Conversano" data-it="B&amp;B · Conversano">B&amp;B · Conversano</span>
             <h3>B&amp;B by Francesca Fanelli</h3>
-            <p>Details and booking information to follow. Check back soon.</p>
+            <p data-en="Details and booking information to follow. Check back soon." data-it="Dettagli e informazioni per la prenotazione in arrivo. Torna presto.">Details and booking information to follow. Check back soon.</p>
           </div>
           <div class="hotel-card">
-            <span class="hotel-type">Recommended · Nearby</span>
-            <h3>Further options</h3>
-            <p>Additional accommodation recommendations to follow. Check back soon.</p>
+            <span class="hotel-type" data-en="Recommended · Nearby" data-it="Consigliato · Nelle vicinanze">Recommended · Nearby</span>
+            <h3 data-en="Further options" data-it="Altre opzioni">Further options</h3>
+            <p data-en="Additional accommodation recommendations to follow. Check back soon." data-it="Ulteriori alloggi consigliati in arrivo. Torna presto.">Additional accommodation recommendations to follow. Check back soon.</p>
           </div>
         </div>
-
       </div>
 
     </div>
   </div>
-
-  <footer>
-    <p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p>
-  </footer>
-
+  <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
   <script src="nav.js"></script>
 </body>
 </html>
