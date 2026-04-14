@@ -7,6 +7,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+      padding: 2rem 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .faq-q::before {
+      content: 'Q.';
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--muted);
+      padding-left: 1.75rem;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <nav><div class="nav-inner">
@@ -22,7 +64,7 @@
       <li><a href="faq.html" class="active" data-en="FAQ" data-it="FAQ">FAQ</a></li>
     </ul>
     <div style="display:flex;align-items:center;">
-      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 EN 🇮🇹</button>
+      <button class="lang-toggle" id="lang-toggle" title="Switch language">🇬🇧 🇮🇹</button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div></nav>
@@ -34,17 +76,91 @@
     <li><a href="dress-code.html" data-en="Dress Code" data-it="Dress Code">Dress Code</a></li>
     <li><a href="registry.html" data-en="Registry" data-it="Lista Nozze">Registry</a></li>
     <li><a href="gallery.html" data-en="Gallery" data-it="Galleria">Gallery</a></li>
-    <li><a href="faq.html" class="active" data-en="FAQ" data-it="FAQ">FAQ</a></li>
+    <li><a href="faq.html" data-en="FAQ" data-it="FAQ">FAQ</a></li>
   </ul></div>
+
   <div class="page">
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
       <h1 class="page-title" data-en="Frequently Asked Questions" data-it="Domande Frequenti">Frequently Asked Questions</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;" data-en="Answers to the questions we know you are asking." data-it="Risposte alle domande che sappiamo vi state ponendo.">Answers to the questions we know you are asking.</p>
+      <p style="max-width:480px;margin:0.5rem auto 0;"
+         data-en="Everything you wanted to know but were afraid to ask."
+         data-it="Tutto quello che volevate sapere ma non avete osato chiedere.">
+        Everything you wanted to know but were afraid to ask.
+      </p>
     </div>
-  <div class="container fade-in"><div class="placeholder-box"><p data-en="FAQs coming soon" data-it="FAQ in arrivo">FAQs coming soon</p></div></div>
+
+    <div class="container fade-in">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="How do I get to the ceremony?" data-it="Come arrivo alla cerimonia?">How do I get to the ceremony?</div>
+          <p class="faq-a" data-en="Please make your own way to Conversano for the ceremony and we'll take care of everything from there. If you're renting a car, do be careful — there are Italian drivers out there, and we want you at the wedding in one piece!"
+             data-it="Vi chiediamo di raggiungere Conversano autonomamente per la cerimonia, poi pensiamo a tutto noi. Se noleggiate un'auto, fate attenzione — ci sono guidatori italiani là fuori, e vogliamo vedervi al matrimonio interi!">
+            Please make your own way to Conversano for the ceremony and we'll take care of everything from there. If you're renting a car, do be careful — there are Italian drivers out there, and we want you at the wedding in one piece!
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="What will the weather be like?" data-it="Com'è il tempo?">What will the weather be like?</div>
+          <p class="faq-a" data-en="Hopefully glorious Pugliese sunshine — and it almost certainly will be. But even if the weather has other ideas, the party absolutely goes ahead regardless. Pack light layers just in case, but don't let it worry you."
+             data-it="Speriamo in un sole pugliese splendente — e quasi certamente sarà così. Ma anche se il tempo avesse altri piani, la festa si fa comunque. Portate qualcosa di leggero per ogni evenienza, ma non preoccupatevi.">
+            Hopefully glorious Pugliese sunshine — and it almost certainly will be. But even if the weather has other ideas, the party absolutely goes ahead regardless. Pack light layers just in case, but don't let it worry you.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="Are children welcome?" data-it="I bambini sono i benvenuti?">Are children welcome?</div>
+          <p class="faq-a" data-en="Absolutely — the venue will be providing entertainment for the little ones throughout the day. We haven't been given the full details of what's planned, so we're choosing to imagine it's Battle Royale style. Whatever it is, they'll be well looked after."
+             data-it="Assolutamente sì — la location metterà a disposizione intrattenimento per i più piccoli durante tutta la giornata. Non ci sono stati forniti i dettagli completi su cosa è previsto, quindi immaginiamo sia in stile Battle Royale. Qualunque cosa sia, saranno in buone mani.">
+            Absolutely — the venue will be providing entertainment for the little ones throughout the day. We haven't been given the full details of what's planned, so we're choosing to imagine it's Battle Royale style. Whatever it is, they'll be well looked after.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="Can I bring a plus one?" data-it="Posso portare un accompagnatore?">Can I bring a plus one?</div>
+          <p class="faq-a" data-en="If you're planning to bring a plus one, please do let us know when you RSVP — just include their name and details in your response so we can make sure we have them on the list."
+             data-it="Se intendete portare un accompagnatore, fatecelo sapere quando confermate la vostra presenza — includete semplicemente il loro nome e i dettagli nella risposta, così potremo aggiungerli alla lista.">
+            If you're planning to bring a plus one, please do let us know when you RSVP — just include their name and details in your response so we can make sure we have them on the list.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="I'm struggling to find accommodation — help!" data-it="Faccio fatica a trovare un alloggio — aiuto!">I'm struggling to find accommodation — help!</div>
+          <p class="faq-a" data-en="We've put together some accommodation suggestions on the Stay page — have a look there first. If you're still stuck, please don't hesitate to get in touch directly and we'll do our best to point you in the right direction."
+             data-it="Abbiamo raccolto alcuni suggerimenti di alloggio nella pagina Soggiorno — dai un'occhiata lì prima. Se sei ancora in difficoltà, non esitare a contattarci direttamente e faremo del nostro meglio per aiutarti.">
+            We've put together some accommodation suggestions on the Stay page — have a look there first. If you're still stuck, please don't hesitate to get in touch directly and we'll do our best to point you in the right direction.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="When will the party end?" data-it="Quando finisce la festa?">When will the party end?</div>
+          <p class="faq-a" data-en="We suspect it'll go well into the small hours of the morning — this is a wedding in Italy after all. A word to the wise: if you're not a fan of loud music late at night, perhaps don't book a room at the reception venue itself."
+             data-it="Sospettiamo che si protrarrà fino alle ore piccole — d'altronde è un matrimonio in Italia. Un consiglio: se non siete amanti della musica alta fino a tarda notte, forse evitate di prenotare una camera alla location del ricevimento.">
+            We suspect it'll go well into the small hours of the morning — this is a wedding in Italy after all. A word to the wise: if you're not a fan of loud music late at night, perhaps don't book a room at the reception venue itself.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="Is there a free bar?" data-it="C'è il bar aperto?">Is there a free bar?</div>
+          <p class="faq-a" data-en="Not once we're finished with it."
+             data-it="Non dopo che avremo finito noi.">
+            Not once we're finished with it.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" data-en="Was this website made by an AI?" data-it="Questo sito è stato fatto da un'intelligenza artificiale?">Was this website made by an AI?</div>
+          <p class="faq-a" data-en="Yes — Claude helped enormously. We've probably put some poor web designer out of a job, and we're not sure we could have done it without it given the time available. But here we are, and we think it looks rather good."
+             data-it="Sì — Claude è stato di grandissimo aiuto. Probabilmente abbiamo tolto il lavoro a qualche povero web designer, e non siamo sicuri di essere riusciti a farlo senza di esso, considerando il tempo a disposizione. Ma eccoci qui, e pensiamo che sia venuto piuttosto bene.">
+            Yes — Claude helped enormously. We've probably put some poor web designer out of a job, and we're not sure we could have done it without it given the time available. But here we are, and we think it looks rather good.
+          </p>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <footer><p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p></footer>
+
   <script src="nav.js"></script>
 </body>
 </html>
