@@ -8,16 +8,116 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .rsvp-intro {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .deadline-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid var(--rule);
+      padding: 1rem 2rem;
+      margin-bottom: 2.5rem;
+      background: var(--warm-white);
+    }
+
+    .deadline-banner .diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .deadline-banner p {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .deadline-banner strong {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .rsvp-notes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .rsvp-note {
+      border-left: 1px solid var(--rule);
+      padding: 0 0 0 1.25rem;
+      text-align: left;
+    }
+
+    .rsvp-note h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .rsvp-note p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .form-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      border: 1px solid var(--rule);
+      background: var(--warm-white);
+      padding: 3rem 2.5rem;
+    }
+
+    .form-placeholder {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .form-placeholder p {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin: 0 0 0.5rem;
+    }
+
+    .form-placeholder small {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .form-wrapper iframe {
+      width: 100%;
+      border: none;
+      min-height: 900px;
+    }
+  </style>
 </head>
 <body>
+
   <nav>
     <div class="nav-inner">
       <a class="nav-brand" href="index.html">E <span>&amp;</span> L</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
         <li><a href="details.html">Details</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="rsvp.html" class="active">RSVP</a></li>
         <li><a href="accommodation.html">Stay</a></li>
         <li><a href="dress-code.html">Dress Code</a></li>
         <li><a href="registry.html">Registry</a></li>
@@ -29,12 +129,12 @@
       </button>
     </div>
   </nav>
+
   <div class="nav-menu" id="nav-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="our-story.html">Our Story</a></li>
       <li><a href="details.html">Details</a></li>
-      <li><a href="rsvp.html">RSVP</a></li>
+      <li><a href="rsvp.html" class="active">RSVP</a></li>
       <li><a href="accommodation.html">Stay</a></li>
       <li><a href="dress-code.html">Dress Code</a></li>
       <li><a href="registry.html">Registry</a></li>
@@ -42,21 +142,70 @@
       <li><a href="faq.html">FAQ</a></li>
     </ul>
   </div>
+
   <div class="page">
+
     <div class="page-header fade-in">
       <span class="eyebrow">Elisabetta &amp; Luke</span>
       <h1 class="page-title">RSVP</h1>
-      <p style="max-width:480px;margin:0.5rem auto 0;">Please let us know if you can make it.</p>
+      <p style="max-width:480px;margin:0.5rem auto 0;">
+        We'd love to know if you can join us. Please fill in one response per household.
+      </p>
     </div>
-  <div class="container fade-in">
-    <div class="placeholder-box">
-      <p>RSVP form coming soon</p>
+
+    <div class="container">
+
+      <div class="rsvp-intro fade-in">
+
+        <div class="deadline-banner">
+          <div class="diamond"></div>
+          <p>Please respond by <strong>TBD</strong></p>
+          <div class="diamond"></div>
+        </div>
+
+        <div class="rsvp-notes">
+          <div class="rsvp-note">
+            <h3>One per household</h3>
+            <p>Please submit a single response listing the names and details of everyone in your party.</p>
+          </div>
+          <div class="rsvp-note">
+            <h3>Dietary requirements</h3>
+            <p>Please include any dietary restrictions or allergies for each guest so we can make arrangements.</p>
+          </div>
+          <div class="rsvp-note">
+            <h3>Song requests</h3>
+            <p>We'd love your suggestions for the dancefloor — one song per guest to get the party started.</p>
+          </div>
+          <div class="rsvp-note">
+            <h3>Questions?</h3>
+            <p>If you have any queries before RSVPing, please don't hesitate to get in touch with us directly.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-wrapper fade-in">
+        <!--
+          REPLACE THIS COMMENT BLOCK with your Google Form embed code.
+          To get it:
+            1. Open your Google Form
+            2. Click Send (top right) → the < > Embed tab
+            3. Copy the full <iframe ...></iframe> tag
+            4. Paste it here, replacing the div.form-placeholder below
+        -->
+        <div class="form-placeholder">
+          <p>RSVP form coming soon</p>
+          <small>Check back shortly — we're putting the finishing touches on.</small>
+        </div>
+      </div>
+
     </div>
   </div>
-  </div>
+
   <footer>
     <p>Elisabetta Monopoli &amp; Luke Giddings &nbsp;&middot;&nbsp; monopoligiddings.wedding</p>
   </footer>
+
   <script src="nav.js"></script>
 </body>
 </html>
