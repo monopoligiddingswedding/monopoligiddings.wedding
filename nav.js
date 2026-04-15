@@ -1,3 +1,8 @@
+// ── Clickjacking protection ────────────────────────────────
+if (window.self !== window.top) {
+  window.top.location = window.self.location;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── Mobile nav toggle ──────────────────────────────────────
@@ -76,11 +81,17 @@ document.addEventListener('DOMContentLoaded', function () {
       langBtn.title = 'Switch to English';
     }
 
-    // Swap all bilingual text
+    // Swap all bilingual text (use textContent by default to avoid XSS;
+    // elements that contain markup must opt in with the data-html attribute)
     document.querySelectorAll('[data-en]').forEach(function (el) {
-      el.innerHTML = lang === 'en'
+      var text = lang === 'en'
         ? el.getAttribute('data-en')
         : el.getAttribute('data-it');
+      if (el.hasAttribute('data-html')) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
     });
 
     document.documentElement.lang = lang;

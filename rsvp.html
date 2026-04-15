@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSVP — Elisabetta &amp; Luke</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; frame-src https://docs.google.com; img-src 'self' data:; upgrade-insecure-requests" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
@@ -62,7 +63,7 @@
       <div class="rsvp-intro fade-in">
         <div class="deadline-banner">
           <div class="diamond"></div>
-          <p data-en="Please respond by &lt;strong&gt;TBD&lt;/strong&gt;" data-it="Si prega di rispondere entro il &lt;strong&gt;TBD&lt;/strong&gt;">Please respond by <strong>TBD</strong></p>
+          <p data-html data-en="Please respond by &lt;strong&gt;TBD&lt;/strong&gt;" data-it="Si prega di rispondere entro il &lt;strong&gt;TBD&lt;/strong&gt;">Please respond by <strong>TBD</strong></p>
           <div class="diamond"></div>
         </div>
         <div class="rsvp-notes">
@@ -88,7 +89,7 @@
         <!--
           Google Form embed
         -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQoiKdvoi4i7oFNFas3xY_e4yYpu6CEjgP8fNGx24282jihw/viewform?embedded=true" style="width:100%;min-height:1058px;border:none;" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdQoiKdvoi4i7oFNFas3xY_e4yYpu6CEjgP8fNGx24282jihw/viewform?embedded=true" style="width:100%;min-height:1058px;border:none;" frameborder="0" marginheight="0" marginwidth="0" sandbox="allow-scripts allow-forms allow-same-origin">Loading…</iframe>
       </div>
     </div>
   </div>
